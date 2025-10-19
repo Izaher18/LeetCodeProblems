@@ -1,0 +1,9 @@
+def isPalindrome(self, x):
+    ra = 0
+    temp = x
+    if x < 0:
+        return False
+    while (x > 0):
+        ra = ra * 10 + x % 10
+        x = x // 10
+    return temp == ra
