@@ -1,0 +1,14 @@
+from collections import Counter
+class Solution(object):
+    def isAnagram(self, s, t):
+        if len(s) != len(t): 
+            return False
+
+        s_dict = Counter(s) 
+        t_dict = Counter(t)
+
+        return s_dict == t_dict 
+        
+
+#Anagram is if you rearrange letters in a word to get another word. In this code, we start by checking to see if the length is equal, if not its not an anagram. We use counter which keeps track of how many times a letter appears in a string. 
+Creating a hashmap of the letters and how many times they appear. For example "banana", Counter({'a': 3, 'b': 1, 'n': 2}). If the two counters are equal, itll return true, if not return false. 
