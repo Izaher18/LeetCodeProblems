@@ -1,0 +1,27 @@
+class RandomizedSet(object):
+
+  def __init__(self):
+      self.numMap = {} 
+      self.numList = []
+      
+
+  def insert(self, val):
+      res = val not in self.numMap #checking to see if value is not in map 
+      if res: #if res is true, we execute this
+          self.numMap[val] = len(self.numList) #adds the val into the hashmap. Key = Val, Value = index of numlist 
+          self.numList.append(val) #adds val into list 
+      return res 
+
+  def remove(self, val):
+      res = val in self.numMap #Will be true if val is in map 
+      if res: 
+          idx = self.numMap[val] #gets index of value gonna be removed 
+          lastVal = self.numList[-1] #gets last element in list to replace the val getting removed at the index 
+          self.numList[idx] = lastVal
+          self.numList.pop() #removes last element in the list. 
+          self.numMap[lastVal] = idx #update hashmap key:value pair and mapping 
+          del self.numMap[val] #remove val from hashmap entirely 
+      return res 
+
+  def getRandom(self):
+      return random.choice(self.numList) #returns a random value from the list. 
