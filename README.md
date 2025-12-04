@@ -1,18 +1,16 @@
+# LeetCode Solutions
 
-├─ README.md
-├─ LICENSE
-├─ .github/
-│  ├─ workflows/ (CI for tests)
-│  └─ PULL_REQUEST_TEMPLATE.md
-├─ problems/
-│  ├─ 0001-two-sum/
-│  │  ├─ README.md              # problem description and link
-│  │  ├─ solution.py
-│  │  ├─ solution.java
-│  │  └─ tests/                 # optional unit tests
-│  ├─ 0002-add-two-numbers/
-│  │  ├─ README.md
-│  │  └─ solution.cpp
-│  └─ ...
-└─ utils/
-   └─ helper_scripts (optional)
+A structured repository for my LeetCode problem-solving journey.  
+Every solution includes clean code, helpful comments, and time/space complexity.
+
+---
+
+## 🚀 Goal
+- Track my progress solving LeetCode problems  
+- Improve my coding skills and interview readiness  
+- Keep solutions consistent, organized, and easy to revisit later  
+- Share knowledge with other learners  
+
+---
+
+## 📂 Folder Structure
