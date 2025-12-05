@@ -1,0 +1,23 @@
+class Solution(object):
+    def numIslands(self, grid):
+        m = len(grid) #gets the rows
+        n = len(grid[0]) #gets the col
+
+        def dfs(i, j):
+            if i < 0 or i >= m or j < 0 or j >= n or grid[i][j] != "1": #checks if we have valid spot on the 2d graph.
+                return
+            else:
+                grid[i][j] = "0"
+                dfs(i, j + 1) #checks the right 
+                dfs(i, j - 1) #checks the left
+                dfs(i + 1, j) #checks bottom
+                dfs(i - 1, j)
+
+        num_isl = 0
+        for i in range(m): #goes through each row
+            for j in range(n): #goes through each col
+                if grid[i][j] == "1": #if our position is 1 we add to num_isl and then conduct dfs to get borders
+                    num_isl += 1
+                    dfs(i,j)
+                    
+        return num_isl
