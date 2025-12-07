@@ -1,0 +1,17 @@
+import heapq
+class Solution(object):
+    def kClosest(self, points, k):
+        def dist(x, y): #function computes the distance for each point
+            return x**2 + y**2
+        
+        heap = []
+        for x, y in points: 
+            d = dist(x,y)
+            if len(heap) < k:
+                heapq.heappush(heap, (-d,x,y)) #add the points into our max heap. 
+            else: 
+                heapq.heappushpop(heap,(-d,x,y)) #takes the top/biggest element in the heap out. 
+        
+        return [(x,y) for d,x,y in heap]
+            
+        
