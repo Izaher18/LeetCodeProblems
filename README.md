@@ -11,6 +11,3 @@ Every solution includes clean code, helpful comments, and time/space complexity.
 - Keep solutions consistent, organized, and easy to revisit later  
 - Share knowledge with other learners  
 
----
-
-## 📂 Folder Structure
