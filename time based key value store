@@ -1,0 +1,29 @@
+class TimeMap(object):
+
+    def __init__(self):
+        self.store = {}
+        
+
+    def set(self, key, value, timestamp):
+        if key not in self.store:
+            self.store[key] = [] 
+        self.store[key].append([value,timestamp])
+
+    def get(self, key, timestamp):
+        res = "" 
+        values = self.store.get(key,[]) #gets list of values to whatever key 
+        l =  0 
+        r = len(values) - 1 
+
+        while l <= r: 
+            middle = (l + r) // 2 
+            if values[middle][1] <= timestamp: 
+                res = values[middle][0]
+                l = middle + 1 #update pointer to go through right half 
+            else: 
+                r = middle - 1 #update pointer to go through left half 
+        
+        return res
+ 
+# get() and binary search = O(logn) because sorted
+# set() = O(1) because we are adding lists (values) to a list 
